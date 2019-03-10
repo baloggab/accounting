@@ -1,0 +1,19 @@
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th style="width: 50px">Date</th>
+      <th style="width: 75px">Type</th>
+      <th style="width: 600px">Description</th>
+      <th style="width: 125px">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tran of transactions" (click)="loadTransaction(tran)">
+      <td>{{ tran.date | date:'yyyy.MM.dd.'}}</td>
+      <td>{{ tran.atype }}</td>
+      <td>{{ tran.desc }}</td>
+      <td style="text-align: right; width: 125px;">{{ tran.amount | number:0 }} Ft</td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="reload()" class="btn btn-default">RELOAD</button>
