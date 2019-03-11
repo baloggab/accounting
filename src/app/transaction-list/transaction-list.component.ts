@@ -18,7 +18,7 @@ export class TransactionListComponent implements OnInit, OnDestroy {
     this.reload();
   }
 
-  private reload() {
+  reload() {
     this._dataService.getTransactions()
         .subscribe(res => {
           this.transactions = res.map(r => Transaction.fromObject(r));

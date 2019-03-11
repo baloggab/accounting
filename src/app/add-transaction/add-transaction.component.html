@@ -2,12 +2,12 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-4">Date</div>
-      <div class="col-8"><input type="date" name="date" [(ngModel)]="tran.date" required class="form-control" /></div>
+      <div class="col-8"><input type="date" name="date" [(ngModel)]="getTransaction().date" required class="form-control" /></div>
     </div>
     <div class="row">
       <div class="col-4">Type</div>
       <div class="col-8">
-        <select name="atype" [(ngModel)]="tran.atype" class="form-control">
+        <select name="atype" [(ngModel)]="getTransaction().atype" class="form-control">
           <option value="">Please select a type</option>
           <option *ngFor="let atype of atypes"
                   [value]="atype">
@@ -18,15 +18,15 @@
     </div>
     <div class="row">
       <div class="col-4">Description</div>
-      <div class="col-8"><input type="text" name="desc" [(ngModel)]="tran.desc" required class="form-control" /></div>
+      <div class="col-8"><input type="text" name="desc" [(ngModel)]="getTransaction().desc" required class="form-control" /></div>
     </div>
     <div class="row">
         <div class="col-4">Amount</div>
-        <div class="col-8"><input type="number" name="amount" [(ngModel)]="tran.amount" required class="form-control" /></div>
+        <div class="col-8"><input type="number" name="amount" [(ngModel)]="getTransaction().amount" required class="form-control" /></div>
     </div>
     <div class="row">
       <div class="col-12">
-        <button type="submit" class="btn btn-primary float-right" style="margin-left: 5px;">{{ tran._id ? 'Update' : 'Save' }}</button>
+        <button type="submit" class="btn btn-primary float-right" style="margin-left: 5px;">{{ getTransaction()._id ? 'Update' : 'Save' }}</button>
         <button type="button" class="btn btn-warning float-right" (click)="clearTransacionData()">Clear</button>
       </div>
     </div>

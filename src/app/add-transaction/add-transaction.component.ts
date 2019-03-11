@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Transaction } from '../models/transaction.model';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { transition } from '@angular/core/src/animation/dsl';
 
 @Component({
   selector: 'add-transaction',
@@ -22,6 +23,10 @@ export class AddTransactionComponent implements OnInit, OnDestroy {
   constructor(private _dataService: DataService) {
     this.tran = new Transaction();
     this.saved = false;
+  }
+
+  getTransaction() : Transaction {
+    return this.tran;
   }
 
   addTransaction() {
